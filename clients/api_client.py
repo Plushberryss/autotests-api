@@ -45,18 +45,16 @@ class APIClient(Client):
     def patch(
         self,
         url: URL | str,
-        json: typing.Any | None = None,
-        data: RequestData | None = None
+        json: typing.Any | None = None
     ) -> Response:
         """
         Выполняет PATCH-запрос (частичное обновление данных).
 
         :param url: URL-адрес эндпоинта.
         :param json: Данные для обновления в формате JSON.
-        :param data: Форматированные данные формы (например, application/x-www-form-urlencoded).
         :return: Объект Response с данными ответа.
         """
-        return self.client.patch(url, json=json, data=data)
+        return self.client.patch(url, json=json)
 
     def delete(self, url: URL | str) -> Response:
         """
